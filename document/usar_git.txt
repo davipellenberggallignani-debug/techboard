@@ -9,6 +9,24 @@ Esse comando mostrará a versão do Git instalada em nossa máquina. No exemplo,
 
 
 
+Transcrição
+Agora, vamos acessar o site do Git para realizar a instalação, baixando o instalador para nosso computador. Para isso, utilizamos o Google Chrome e acessamos o endereço git-scm.com. Ao chegar na página inicial do site do Git, ele identificará automaticamente o sistema operacional do nosso computador. Existem duas formas de instalação. Se estivermos usando o Windows, basta baixar o executável e seguir clicando em "Next" até o final do processo. Para usuários de Mac, há várias formas de instalação, mas recomendamos duas. Se tivermos familiaridade, pode ser mais fácil instalar usando o Homebrew. Para isso, utilizamos o comando:
+
+brew install git
+Copiar código
+Caso contrário, podemos abrir o terminal e digitar o comando:
+
+xcode-select --install
+Copiar código
+Esse comando baixará a linha de comando do Mac, que inclui o Git. Se já tivermos o Git instalado, o comando nos alertará que o "Command Line Tools" já está instalado. Caso contrário, ele realizará todo o processo de instalação.
+
+Verificando a instalação do Git
+Para verificar se o Git foi instalado corretamente, podemos usar o comando:
+
+git --version
+Copiar código
+Esse comando mostrará a versão do Git instalada em nossa máquina. No exemplo, a versão é 2.39.5, a mais atualizada para a versão da Apple. Se a versão aparecer, o Git está instalado corretamente.
+
 Configurando as credenciais do Git
 Com o Git instalado, precisamos configurar as credenciais, que são as configurações de nome de usuário e e-mail. Isso é necessário para registrar as modificações no código, associando-as ao nosso e-mail e nome. Assim, ao verificar uma modificação, aparecerá que foi feita por determinado e-mail e usuário. Para um uso mais profissional, utilizamos as mesmas informações do GitHub. Antes de configurar as credenciais, criamos uma conta no GitHub, pois usaremos as informações fornecidas lá.
 
@@ -25,10 +43,69 @@ git config --list
 Copiar código
 Para configurar o e-mail, usamos:
 
-git config --global user.email "davipellenberggallignani@gmail.com"
+git config --global user.email "danicastilhodev@gmail.com"
 Copiar código
 Verificamos novamente com:
 
 git config --list
 Copiar código
 Se tudo estiver correto, as configurações aparecerão listadas.
+
+Inicializando o repositório Git
+Com as credenciais configuradas, o próximo passo é conectar o Git ao nosso projeto, no caso, o TechTaste. Navegamos até a pasta do projeto com:
+
+cd TechTaste
+Copiar código
+Dentro da pasta, inicializamos o Git com:
+
+git init
+Copiar código
+Isso permite o versionamento de código. Após a inicialização, o explorador mostrará os arquivos com indicadores de status, e o terminal exibirá o nome do projeto seguido de "git".
+
+Adicionando e comitando arquivos
+Durante a inicialização, o Git cria uma pasta oculta no sistema operacional para armazenar as modificações. O primeiro passo após a instalação é usar o comando:
+
+git status
+Copiar código
+Esse comando informa o status dos arquivos na pasta. Ele indica se os arquivos já foram mapeados ou se precisam ser registrados na pasta oculta do Git. Para adicionar os arquivos, utilizamos o comando:
+
+git add .
+Copiar código
+Ao escrever o comando git add, podemos passar arquivo por arquivo para adicionar e registrar. Por exemplo, podemos passar index.html e pressionar "Enter". Ao executar novamente o comando git status, o arquivo index.html será identificado, mas os outros ainda não. A melhor forma de adicionar todos os arquivos é usar o símbolo de ponto. Assim, ao escrever git add ., estamos informando ao Git que queremos adicionar todos os arquivos do diretório atual. Após pressionar "Enter" e executar git status novamente, o Git reconhecerá todos os arquivos.
+
+Realizando o primeiro commit
+Existe uma nomenclatura para isso: arquivos unstaged (não rastreados) e arquivos em stage (conhecidos, mas sem modificações registradas). Para registrar uma primeira versão do código, selecionamos os arquivos desejados e realizamos um commit, que é o registro de uma modificação no projeto. Selecionamos os arquivos para o commit e, em seguida, digitamos o comando:
+
+git commit -m "Commit Inicial"
+Copiar código
+A escolha do idioma para as mensagens de commit pode ser pessoal ou acordada pela equipe de tecnologia.
+
+Visualizando o histórico de commits
+Após escrever a mensagem e pressionar "Enter", o Git mostrará que todos os arquivos não rastreados foram registrados. Podemos ver o log dessas modificações com o comando:
+
+git log
+Copiar código
+Esse comando exibirá informações como o autor do commit, e-mail e data. Para sair dessa área de informação, pressionamos a letra Q.
+
+Realizando alterações e novos commits
+Se alterarmos o texto do projeto, por exemplo, de "fique de olho no que importa" para "fique atento ao que importa", podemos verificar o status dos arquivos com:
+
+git status
+Copiar código
+O Git identificará a modificação no arquivo index.html. Para registrar essa mudança, usamos:
+
+git add .
+Copiar código
+E, em seguida:
+
+git commit -m "Altera o título da página"
+Copiar código
+Após isso, o comando git log mostrará duas modificações: o commit inicial e a alteração do título da página.
+
+Utilizando o VSCode para gerenciar o Git
+Se o terminal parecer confuso para executar comandos do Git, o VSCode oferece uma interface amigável. No menu lateral, o ícone de controle de código fonte conecta-se ao Git. Ele exibe alterações e listas de modificações. Podemos ver o que foi alterado clicando no documento, que mostrará as diferenças. Para preparar um arquivo para commit, clicamos no ícone de mais, movendo-o para a seção de alterações preparadas. Podemos escrever a mensagem diretamente no VSCode e confirmar, executando os comandos por trás dos panos.
+
+Na linha do tempo, o VSCode mostrará os commits realizados. Podemos clicar em cada um para ver os arquivos modificados. O projeto está agora preparado para registrar modificações, o que é útil em caso de mudanças de escopo, permitindo navegar entre as alterações conforme necessário.
+
+Concluindo a sessão
+Por enquanto, é isso. No próximo vídeo, aprenderemos a publicar o código no GitHub. Até lá!
