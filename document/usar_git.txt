@@ -1,0 +1,34 @@
+Agora, vamos acessar o site do Git para realizar a instalação, baixando o instalador para nosso computador. Para isso, utilizamos o Google Chrome e acessamos o endereço git-scm.com. Ao chegar na página inicial do site do Git, ele identificará automaticamente o sistema operacional do nosso computador. Existem duas formas de instalação. Se estivermos usando o Windows, basta baixar o executável e seguir clicando em "Next" até o final do processo. 
+
+
+Para verificar se o Git foi instalado corretamente, podemos usar o comando:
+
+git --version
+Copiar código
+Esse comando mostrará a versão do Git instalada em nossa máquina. No exemplo, a versão é 2.39.5, a mais atualizada para a versão da Apple. Se a versão aparecer, o Git está instalado corretamente.
+
+
+
+Configurando as credenciais do Git
+Com o Git instalado, precisamos configurar as credenciais, que são as configurações de nome de usuário e e-mail. Isso é necessário para registrar as modificações no código, associando-as ao nosso e-mail e nome. Assim, ao verificar uma modificação, aparecerá que foi feita por determinado e-mail e usuário. Para um uso mais profissional, utilizamos as mesmas informações do GitHub. Antes de configurar as credenciais, criamos uma conta no GitHub, pois usaremos as informações fornecidas lá.
+
+Para acessar o GitHub, voltamos ao Chrome e acessamos www.github.com. Na página inicial, podemos entrar ou criar uma conta. Recomendamos usar um e-mail ativo e profissional, pois muitas pessoas, incluindo recrutadores, podem visualizar nosso perfil no GitHub. Após criar a conta, usamos os mesmos dados de nome de usuário e e-mail para configurar as credenciais do Git.
+
+Configurando o nome de usuário e e-mail
+Para configurar as credenciais, utilizamos comandos do Git. Primeiro, configuramos o nome de usuário com o comando:
+
+git config --global user.name "Daniele Castilho"
+Copiar código
+Em seguida, verificamos se a configuração foi bem-sucedida com:
+
+git config --list
+Copiar código
+Para configurar o e-mail, usamos:
+
+git config --global user.email "davipellenberggallignani@gmail.com"
+Copiar código
+Verificamos novamente com:
+
+git config --list
+Copiar código
+Se tudo estiver correto, as configurações aparecerão listadas.
